@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "416412711132",
+    "project_id": "aflutterlogin",
+    "storage_bucket": "aflutterlogin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416412711132:android:4255e451daa13426d95c19",
+        "android_client_info": {
+          "package_name": "com.example.mad_pwa_a_t5"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416412711132-l1b6h8mf59pkgg69cf0dq7jfd7notl57.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB0p9ss-qOmfqKQR8N6ngtk49wm-gI3en0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416412711132-l1b6h8mf59pkgg69cf0dq7jfd7notl57.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
