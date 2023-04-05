@@ -1,16 +1,11 @@
-# mad_pwa_a_t5
+# Experiment No 5: Profile Page App
 
-A new Flutter project.
+To develop a Authentication mechanism for our Flutter application (Stateful)
 
-## Getting Started
+## About Experiment
 
-This project is a starting point for a Flutter application.
+During this experiment, we acquired knowledge about
+* creation of Login form
+* Firebase Authentication service
+* Toast Messages
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
