@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mad_pwa_a_t5/main.dart';
 
 
 class Splash extends StatefulWidget {
@@ -10,17 +9,6 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-  void initState()
-  {
-    super.initState();
-    _navigateHome();
-  }
-
-  _navigateHome()
-  async{
-    await Future.delayed(Duration(milliseconds: 3000), (){});
-   // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomePage()));
-  }
 
   @override
   Widget build(BuildContext context) {

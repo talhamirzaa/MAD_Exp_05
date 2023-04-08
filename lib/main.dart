@@ -3,9 +3,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:mad_pwa_a_t5/ForgotPass.dart';
 import 'package:mad_pwa_a_t5/ProfileScreen.dart';
 import 'package:mad_pwa_a_t5/SplashScreen.dart';
-import 'package:page_transition/page_transition.dart';
+import 'package:mad_pwa_a_t5/signup.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -49,9 +51,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body:
-        FutureBuilder(
+    return FutureBuilder(
 
         future: _initializeFirebase(),
         builder: (context, snapshot) {
@@ -63,10 +63,9 @@ class _HomePageState extends State<HomePage> {
           return  CircularProgressIndicator();
         }
       },
-    )
+    );
 
-        //LoginScreen(),
-        );
+
   }
 }
 
@@ -89,6 +88,7 @@ class _LoginScreenState extends State<LoginScreen> {
     required String password,
     required BuildContext context,
   }) async {
+
     User? user;
     FirebaseAuth auth = FirebaseAuth.instance;
     try {
@@ -115,99 +115,120 @@ class _LoginScreenState extends State<LoginScreen> {
     TextEditingController _emailController = TextEditingController();
     TextEditingController _passwordController = TextEditingController();
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "MAD PWA Academy",
-          style: TextStyle(
-              color: Colors.black, fontSize: 28.0, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          height: 18.0,
-        ),
-        Text(
-          "Login to your app",
-          style: TextStyle(
-              color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(height: 18.0),
-        TextField(
-          controller: _emailController,
-          keyboardType: TextInputType.emailAddress,
-          decoration: const InputDecoration(
-              hintText: "User Email Address",
-              prefixIcon: Icon(
-                Icons.email,
-                color: Colors.black,
-              )),
-        ),
-        SizedBox(
-          height: 20.0,
-        ),
-        TextField(
-          controller: _passwordController,
-          keyboardType: TextInputType.text,
-          obscureText: true,
-          decoration: const InputDecoration(
-              hintText: "User Password",
-              prefixIcon: Icon(
-                Icons.lock,
-                color: Colors.black,
-              )),
-        ),
-        SizedBox(
-          height: 58.0,
-        ),
-        Container(
-          width: double.infinity,
-          padding: EdgeInsets.symmetric(
-            vertical: 10.0,
-            horizontal: 20.0,
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "MAD PWA Academy",
+            style: TextStyle(
+                color: Colors.black, fontSize: 28.0, fontWeight: FontWeight.bold),
           ),
-          child: RawMaterialButton(
-                  shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10.0),
-                          ),
-                  fillColor: Colors.blue[900],
-                  onPressed: () async {
-                              User? user = await signIn(
-                                                    email: _emailController.text,
-                                                    password: _passwordController.text,
-                                                    context: context) as User?;
+          SizedBox(
+            height: 18.0,
+          ),
+          Text(
+            "Login to your app",
+            style: TextStyle(
+                color: Colors.black, fontSize: 30.0, fontWeight: FontWeight.bold),
+          ),
+          SizedBox(height: 18.0),
+          TextField(
+            controller: _emailController,
+            keyboardType: TextInputType.emailAddress,
+            decoration: const InputDecoration(
+                hintText: "User Email Address",
+                prefixIcon: Icon(
+                  Icons.email,
+                  color: Colors.black,
+                )),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          TextField(
+            controller: _passwordController,
+            keyboardType: TextInputType.text,
+            obscureText: true,
+            decoration: const InputDecoration(
+                hintText: "User Password",
+                prefixIcon: Icon(
+                  Icons.lock,
+                  color: Colors.black,
+                )),
+          ),
+          SizedBox(
+            height: 58.0,
+          ),
+          Container(
+            width: double.infinity,
+            padding: EdgeInsets.symmetric(
+              vertical: 10.0,
+              horizontal: 20.0,
+            ),
+            child: RawMaterialButton(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10.0),
+              ),
+              fillColor: Colors.blue[900],
+              onPressed: () async {
+                User? user = await signIn(
+                    email: _emailController.text,
+                    password: _passwordController.text,
+                    context: context) as User?;
 
-                              if (user != null) {
-                                Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(builder: (context) => ProfileScreen()));
-                              }
-                            },
-                  child: Text(
-                            "Login",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18.0,
-                            ),
-                        ),
-                  ),
-        ),
-        SizedBox(
-          height: 20.0,
-        ),
-        Text(
-          "Forgot Password?",
-          style: TextStyle(
-              color: Colors.blue, fontSize:15.0, fontWeight: FontWeight.bold),
-        ),
-        SizedBox(
-          height: 20.0,
-        ),
-        Text(
-          "Don't Have account? SignUp",
-          style: TextStyle(
-              color: Colors.blue, fontSize:15.0, fontWeight: FontWeight.bold),
-        ),
-      ],
+                if (user != null) {
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => ProfileScreen()));
+                }
+              },
+              child: Text(
+                "Login",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 18.0,
+                ),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+      GestureDetector(
+        onTap: () {
+          // Callback function to be executed when button is pressed
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => ForgotPassword()), // Navigate to MyNewPage
+          );
+        },
+        child: Text(
+            "Forgot Password?",
+            style: TextStyle(
+                color: Colors.blue, fontSize:15.0, fontWeight: FontWeight.bold),
+          )
+      ),
+          SizedBox(
+            height: 20.0,
+          ),
+          GestureDetector(
+            onTap: () {
+              // Callback function to be executed when button is pressed
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => signup()), // Navigate to MyNewPage
+              );
+            },
+           child: Text(
+              "Don't Have account? SignUp",
+              style: TextStyle(
+                  color: Colors.blue, fontSize:15.0, fontWeight: FontWeight.bold),
+
+            ),
+          )
+        ],
+      ),
     );
   }
 }

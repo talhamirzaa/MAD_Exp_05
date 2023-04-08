@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+import 'main.dart';
+
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
 
@@ -14,6 +16,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
   int dataAccessLevel=2;
 
   Widget build(BuildContext context) {
+
+
+
     return Scaffold(
       appBar:  AppBar(
         title:  Text("Profile Page"),
@@ -24,7 +29,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
           children: [
             Center(
                 child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/image/profile/male_profile.png"),
+                  backgroundImage: AssetImage("assets/images/profile/male_profile.png"),
                   radius: 50.0,
                 )
             ),
@@ -133,6 +138,9 @@ class _ProfileScreenState extends State<ProfileScreen> {
               child: ElevatedButton.icon(
                 onPressed: () {
                   FirebaseAuth.instance.signOut();
+                  // Navigate to login page
+                  Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
 
                 },
                 icon: Icon(Icons.arrow_back, size:18),
