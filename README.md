@@ -7,7 +7,7 @@ To develop a Authentication mechanism for our Flutter application (Stateful)
 During this experiment, we acquired knowledge about
 * creation of Login form
 * Firebase Authentication service
-  * SingIn, SignUp and Reset Password
+  * SignIn, SignUp and Reset Password
 * Toast Messages
 * Splash Screen 
 
