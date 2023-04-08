@@ -8,5 +8,5 @@ During this experiment, we acquired knowledge about
 * creation of Login form
 * Firebase Authentication service
 * Toast Messages
-* Splash Screen
+* Splash Screen 
 
