@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dbit/Documents/Project/mad_pwa_a_t5/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ja/values-ja.xml",
+            "outputFile": "/home/dbit/MADPWAProjects/mad_pwa_t5/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-ja/values-ja.xml",
             "map": [
                 {
                     "source": "/home/dbit/.gradle/caches/transforms-3/4c5cefc4bced38f73a0cc4404fde07b9/transformed/jetified-play-services-basement-18.1.0/res/values-ja/values.xml",

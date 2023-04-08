@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/home/dbit/Documents/Project/mad_pwa_a_t5/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/home/dbit/MADPWAProjects/mad_pwa_t5/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/home/dbit/Documents/Project/mad_pwa_a_t5/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/home/dbit/MADPWAProjects/mad_pwa_t5/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

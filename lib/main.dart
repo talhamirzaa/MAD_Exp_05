@@ -1,9 +1,11 @@
+import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:mad_pwa_a_t5/ProfileScreen.dart';
-
+import 'package:mad_pwa_a_t5/SplashScreen.dart';
+import 'package:page_transition/page_transition.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -14,8 +16,18 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
-    );
+      //home: Splash(),
+
+      home: AnimatedSplashScreen(
+          duration: 3000,
+          splash: Splash(),
+        splashIconSize: 200,
+
+        nextScreen: HomePage(),
+          splashTransition: SplashTransition.fadeTransition,
+
+      ),
+       );
   }
 }
 
@@ -38,13 +50,17 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: FutureBuilder(
-      future: _initializeFirebase(),
-      builder: (context, snapshot) {
+        body:
+        FutureBuilder(
+
+        future: _initializeFirebase(),
+        builder: (context, snapshot) {
+
         if (snapshot.connectionState == ConnectionState.done) {
           return LoginScreen();
         } else {
-          return LoginScreen();
+
+          return  CircularProgressIndicator();
         }
       },
     )
@@ -54,6 +70,9 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
+
+
+
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
 
@@ -62,7 +81,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Future<User?> loginusingemailandpassword({
+
+
+
+  Future<User?> signIn({
     required String email,
     required String password,
     required BuildContext context,
@@ -150,7 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                   fillColor: Colors.blue[900],
                   onPressed: () async {
-                              User? user = await loginusingemailandpassword(
+                              User? user = await signIn(
                                                     email: _emailController.text,
                                                     password: _passwordController.text,
                                                     context: context) as User?;
@@ -168,7 +190,23 @@ class _LoginScreenState extends State<LoginScreen> {
                             ),
                         ),
                   ),
-        )
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+        Text(
+          "Forgot Password?",
+          style: TextStyle(
+              color: Colors.blue, fontSize:15.0, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
+        Text(
+          "Don't Have account? SignUp",
+          style: TextStyle(
+              color: Colors.blue, fontSize:15.0, fontWeight: FontWeight.bold),
+        ),
       ],
     );
   }
