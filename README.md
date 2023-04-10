@@ -1,4 +1,4 @@
-# Experiment No 5: Profile Page App
+# Experiment No 5: Firebase Authentication Service
 
 To develop a Authentication mechanism for our Flutter application (Stateful)
 
