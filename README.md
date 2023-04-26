@@ -18,7 +18,7 @@ During this experiment, we acquired knowledge about
 |:--:|
 | *Splash Screen* |
 
-|![plot](./assets/screenshots/screenshot_2.png?raw=true) |
+| ![WhatsApp Image 2023-04-26 at 2 24 38 PM](https://user-images.githubusercontent.com/78201104/234524241-bc06e904-587b-4603-93a2-b044c708db3d.jpeg)|
 |:--:|
 | *SignIn Screen* |
 
@@ -26,7 +26,7 @@ During this experiment, we acquired knowledge about
 |:--:|
 | *Reset Password Screen* |
 
-|![plot](./assets/screenshots/screenshot_4.png?raw=true) |
+| ![WhatsApp Image 2023-04-26 at 2 24 37 PM](https://user-images.githubusercontent.com/78201104/234524732-476b5078-d904-4bee-8437-55ea65cf4312.jpeg)|
 |:--:|
 | *SignUp Screen* |
 
