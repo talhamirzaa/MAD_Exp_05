@@ -29,7 +29,3 @@ During this experiment, we acquired knowledge about
 | ![WhatsApp Image 2023-04-26 at 2 24 37 PM](https://user-images.githubusercontent.com/78201104/234524732-476b5078-d904-4bee-8437-55ea65cf4312.jpeg)|
 |:--:|
 | *SignUp Screen* |
-
-|![plot](./assets/screenshots/screenshot_5.png?raw=true) |
-|:--:|
-| *Profile Screen with Logout* |
